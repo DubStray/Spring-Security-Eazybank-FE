@@ -1,27 +1,71 @@
-# BankAppUi
+# Spring Security EazyBank – Frontend Template  
+*Angular client used in the Udemy course “Spring Boot & Spring Security” by Madan Reddy (Eazy Bytes)*
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+## Overview  
+This repository contains the **Angular frontend template** used in the Udemy course by Madan Reddy (Eazy Bytes), focused on Spring Boot and Spring Security.
 
-## Development server
+The course intentionally **does not teach Angular**.  
+Instead, the instructor provides a ready-made UI template so students can focus entirely on the backend topics: authentication, authorization, JWT, filters, exception handling, and secure REST API development.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project is that template.
 
-## Code scaffolding
+## Purpose  
+The goal of this frontend is to support the backend learning journey by providing:  
+- a simple and functional UI,  
+- predefined pages and components,  
+- an easy way to test login, JWT flow, role-based access, and secure API calls.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+It is **not** intended to be a full Angular training project or a production-ready frontend.
 
-## Build
+## Getting Started  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the repository:
 
-## Running unit tests
+    git clone https://github.com/DubStray/Spring-Security-Eazybank-FE
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Navigate into the project:
 
-## Running end-to-end tests
+    cd Spring-Security-Eazybank-FE
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install dependencies:
 
-## Further help
+    npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run the development server:
+
+    ng serve
+
+The app will be available at:
+
+    http://localhost:4200/
+
+Make sure the backend (Spring Boot + Spring Security) is running and configured to allow CORS requests from the Angular dev server.
+
+Technical Notes
+
+    --Built with Angular (matching the version used in the course template).
+    --Includes basic routing, components, and UI structure.
+    --Integrates with the backend via REST endpoints.
+    --Designed as a simple client for authentication and role-based access testing.
+    --Not meant to be an Angular tutorial or a deep-dive frontend project.
+
+It exists solely to support the Spring Security training experience.
+Backend Integration
+
+To use this template effectively:
+
+    Run the backend from the course (Spring Boot + Spring Security + JWT).
+
+    Configure the API URLs in environment.ts.
+
+    Test:
+
+        login
+
+        JWT issuance and storage
+
+        protected routes
+
+        authorized vs unauthorized access
+
+        role-based features
