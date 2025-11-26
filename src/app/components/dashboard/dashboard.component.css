@@ -236,11 +236,10 @@
   border-top: 4px solid #343a40;
 }
 
-.border-primary-top:hover{
+.border-primary-top:hover {
   border-top: 4px solid #57b846;
   cursor: pointer;
 }
-
 
 .row {
   display: flex;
@@ -255,7 +254,7 @@ h3.number {
   line-height: 36px;
   text-align: right;
   color: var(--heading-color);
-  transition: .3s ease;
+  transition: 0.3s ease;
   margin-bottom: 0;
 }
 
@@ -263,5 +262,3 @@ p.stat-text {
   font-size: 14px;
   text-align: right;
 }
-
-

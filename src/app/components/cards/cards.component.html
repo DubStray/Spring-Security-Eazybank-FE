@@ -7,8 +7,8 @@
       </div>
     </div>
     <div class="row text-white align-items-center text-center h-100">
-      <div class="col-md-4 bg-dark p-5 " style="height:130px;">
-        <h1 class="text-white">{{currOutstandingAmt | currency}}</h1>
+      <div class="col-md-4 bg-dark p-5" style="height: 130px">
+        <h1 class="text-white">{{ currOutstandingAmt | currency }}</h1>
       </div>
     </div>
   </div>
@@ -30,22 +30,20 @@
       </thead>
       <tbody>
         <tr *ngFor="let card of cards">
-          <th>{{card.cardNumber}}</th>
-          <td>{{card.cardType}}</td>
-          <td>{{card.totalLimit | currency}}</td>
-          <td>{{card.amountUsed | currency}}</td>
-          <td>{{card.availableAmount | currency}}</td>
+          <th>{{ card.cardNumber }}</th>
+          <td>{{ card.cardType }}</td>
+          <td>{{ card.totalLimit | currency }}</td>
+          <td>{{ card.amountUsed | currency }}</td>
+          <td>{{ card.availableAmount | currency }}</td>
         </tr>
       </tbody>
     </table>
-    </div>
-    <div class="row mb-5">
-      <div class="col">
-        <div class="">
-          <button class="btn btn-eazybank" routerLink="/dashboard">
-            BACK
-          </button>
-        </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col">
+      <div class="">
+        <button class="btn btn-eazybank" routerLink="/dashboard">BACK</button>
       </div>
     </div>
+  </div>
 </div>
