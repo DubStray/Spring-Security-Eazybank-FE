@@ -1,3 +1,4 @@
+// Frammenti di rotte API centralizzati; evita duplicare stringhe nei servizi.
 export const AppConstants = {
   CONTACT_API_URL: '/contact',
   LOGIN_API_URL: '/user',

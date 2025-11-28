@@ -1,3 +1,5 @@
+/* Stili della pagina di login e molte utility importate dal template.
+   Per una manutenzione più pulita valuta di sostituire gli helper fs-/p- con un framework di utility standard. */
 @import "../../../assets/css/font-awesome.css";
 @import "../../../assets/css/bootstrap.css";
 

@@ -1,3 +1,4 @@
+// Vista prestiti: recupera la lista prestiti e aggrega l’importo residuo.
 import { Component, OnInit } from '@angular/core';
 import { Loans } from 'src/app/model/loans.model';
 import { User } from 'src/app/model/user.model';
@@ -16,6 +17,7 @@ export class LoansComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
+    // Carica i prestiti dell’utente; sommare i residui dà un colpo d’occhio rapido.
     this.user = JSON.parse(sessionStorage.getItem('userdetails') || '');
     if (this.user) {
       this.dashboardService

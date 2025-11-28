@@ -1,3 +1,4 @@
+// Elenco pubblico degli avvisi; carica i dati in init e renderizza card.
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
@@ -12,6 +13,7 @@ export class NoticesComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
+    // Carica una volta in init; per aggiornamenti real-time usa uno stream osservabile.
     this.dashboardService.getNoticeDetails().subscribe((responseData) => {
       this.notices = <any>responseData.body;
     });

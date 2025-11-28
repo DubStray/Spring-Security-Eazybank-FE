@@ -1,3 +1,4 @@
+// Layer di accesso dati per gli endpoint del dashboard; mantiene i componenti snelli.
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppConstants } from '../../constants/app.constants';
@@ -10,6 +11,7 @@ import { Contact } from '../../model/contact.model';
 export class DashboardService {
   constructor(private http: HttpClient) {}
 
+  // Recupera le info principali dell’account dell’utente autenticato.
   getAccountDetails(id: number) {
     return this.http.get(
       environment.rooturl + AppConstants.ACCOUNT_API_URL + '?id=' + id,
@@ -17,6 +19,7 @@ export class DashboardService {
     );
   }
 
+  // Scarica la cronologia delle transazioni; valuta paginazione su liste grandi.
   getAccountTransactions(id: number) {
     return this.http.get(
       environment.rooturl + AppConstants.BALANCE_API_URL + '?id=' + id,
@@ -24,6 +27,7 @@ export class DashboardService {
     );
   }
 
+  // Riepilogo prestiti per le card del dashboard.
   getLoansDetails(id: number) {
     return this.http.get(
       environment.rooturl + AppConstants.LOANS_API_URL + '?id=' + id,
@@ -31,6 +35,7 @@ export class DashboardService {
     );
   }
 
+  // Riepilogo carte di credito per le card del dashboard.
   getCardsDetails(id: number) {
     return this.http.get(
       environment.rooturl + AppConstants.CARDS_API_URL + '?id=' + id,
@@ -38,12 +43,14 @@ export class DashboardService {
     );
   }
 
+  // Gli avvisi sono pubblici, quindi niente credenziali.
   getNoticeDetails() {
     return this.http.get(environment.rooturl + AppConstants.NOTICES_API_URL, {
       observe: 'response',
     });
   }
 
+  // Invia i messaggi di contatto; ritorna il record creato con id generato.
   saveMessage(contact: Contact) {
     return this.http.post(
       environment.rooturl + AppConstants.CONTACT_API_URL,

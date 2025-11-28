@@ -1,3 +1,6 @@
+/* Stili della landing importati dal template.
+   Contiene molte utility (fs-*, p-*) simili a un mini design system.
+   Per la manutenibilità valuta di snellire le utility inutilizzate o sostituirle con utility di Tailwind/Bootstrap. */
 @import "../../../assets/css/font-awesome.css";
 @import "../../../assets/css/bootstrap.css";
 

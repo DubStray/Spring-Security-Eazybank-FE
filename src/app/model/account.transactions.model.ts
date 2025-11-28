@@ -1,3 +1,4 @@
+// Modello di riga transazione per la cronologia movimenti.
 export class AccountTransactions {
   public accountNumber: number;
   public customerId: number;

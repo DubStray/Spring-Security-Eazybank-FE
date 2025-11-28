@@ -1,3 +1,4 @@
+// DTO per metadati dell’account; allineato al payload della relativa API.
 export class Account {
   public customerId: number;
   public accountNumber: number;

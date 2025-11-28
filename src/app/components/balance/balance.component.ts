@@ -1,3 +1,4 @@
+// Vista del saldo: mostra l’ultimo saldo finale e la cronologia movimenti.
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
@@ -14,6 +15,7 @@ export class BalanceComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
+    // Recupera le transazioni dell’utente loggato; il server dovrebbe già imporre l’autenticazione.
     this.user = JSON.parse(sessionStorage.getItem('userdetails') || '');
     if (this.user) {
       this.dashboardService

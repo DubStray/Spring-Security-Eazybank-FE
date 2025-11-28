@@ -1,3 +1,5 @@
+/* Stili della sezione contatti e utility di layout (grid, tipografia, spaziature).
+   Valuta l’uso di un design system per evitare di ridefinire questi helper. */
 @import "../../../assets/css/font-awesome.css";
 
 * {

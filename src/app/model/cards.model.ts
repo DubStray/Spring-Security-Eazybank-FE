@@ -1,3 +1,4 @@
+// Modello di riepilogo carta di credito; tieni i numeri come number per formattare valuta.
 export class Cards {
   public cardNumber: string;
   public customerId: number;

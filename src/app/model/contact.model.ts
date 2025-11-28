@@ -1,3 +1,4 @@
+// DTO semplice per i messaggi di contatto; si può usare un’interfaccia se preferisci immutabilità.
 export class Contact {
   public contactId: string;
   public contactName: string;

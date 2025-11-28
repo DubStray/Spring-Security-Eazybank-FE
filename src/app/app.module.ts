@@ -1,3 +1,4 @@
+// Modulo root di Angular: collega dipendenze, componenti e logiche trasversali.
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -23,6 +24,7 @@ import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
+  // Dichiara tutti i componenti del modulo così Angular può renderizzarli.
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -37,6 +39,7 @@ import { HomeComponent } from './components/home/home.component';
     CardsComponent,
     HomeComponent,
   ],
+  // Importa supporto browser, routing, forms, HTTP e protezione XSRF.
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,6 +50,7 @@ import { HomeComponent } from './components/home/home.component';
       headerName: 'X-XSRF-TOKEN',
     }),
   ],
+  // Registra l’interceptor HTTP e la route guard a livello di modulo.
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

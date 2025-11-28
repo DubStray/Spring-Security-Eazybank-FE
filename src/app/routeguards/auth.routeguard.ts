@@ -1,3 +1,5 @@
+// Route guard: mantiene le rotte protette dietro a un controllo di sessione.
+// Suggerimento: usa un AuthService dedicato per incapsulare recupero/validazione sessione.
 import { Injectable, inject } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -14,6 +16,7 @@ export class AuthActivateRouteGuard {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    // Recupera l’utente dalla session storage; un controllo JWT/token sarebbe più robusto.
     if (sessionStorage.getItem('userdetails')) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails')!);
     }
@@ -28,5 +31,6 @@ export const AuthGuard: CanActivateFn = (
   next: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ): boolean => {
+  // Wrapper funzionale per riusare la logica della classe nelle definizioni di rotta.
   return inject(AuthActivateRouteGuard).canActivate(next, state);
 };

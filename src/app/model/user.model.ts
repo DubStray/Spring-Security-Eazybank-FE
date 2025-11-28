@@ -1,3 +1,4 @@
+// Modello profilo utente usato per auth e info di sessione nell’app.
 export class User {
   public id: number;
   public name: string;

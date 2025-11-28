@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* Stili globali e override usati nelle varie pagine; funge da tema condiviso. */
 body {
   background: rgb(235, 234, 233);
   background-size: cover;

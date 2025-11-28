@@ -1,3 +1,4 @@
+// Landing autenticata che riepiloga le opzioni di navigazione.
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 
@@ -12,6 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Recupera l’utente in cache; idealmente arriverebbe da un AuthService osservabile.
     if (sessionStorage.getItem('userdetails')) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails') || '');
     }

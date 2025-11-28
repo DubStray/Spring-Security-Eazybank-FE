@@ -1,3 +1,4 @@
+// Landing page pubblica; contiene solo contenuto statico.
 import { Component, OnInit } from '@angular/core';
 
 @Component({

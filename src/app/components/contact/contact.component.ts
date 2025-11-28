@@ -1,3 +1,4 @@
+// Componente del form contatti: crea un modello Contact e lo invia via DashboardService.
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/model/contact.model';
 import { NgForm } from '@angular/forms';
@@ -17,6 +18,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {}
 
   saveMessage(contactForm: NgForm) {
+    // Invia e resetta il form; si può aggiungere toast/spinner per una UX migliore.
     this.dashboardService.saveMessage(this.model).subscribe((responseData) => {
       this.model = <any>responseData.body;
       contactForm.resetForm();

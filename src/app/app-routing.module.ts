@@ -1,3 +1,4 @@
+// Tabella di routing centrale: mantiene la navigazione dichiarativa e protetta dove serve.
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactComponent } from './components/contact/contact.component';
@@ -13,6 +14,7 @@ import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  // Reindirizza il path vuoto a home per una landing prevedibile.
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -21,6 +23,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    // La guard protegge l’area autenticata; su progetti grandi valuta moduli lazy-loaded.
     canActivate: [AuthActivateRouteGuard],
   },
   { path: 'logout', component: LogoutComponent },

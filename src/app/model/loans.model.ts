@@ -1,3 +1,4 @@
+// DTO che descrive un prestito cliente; valuta interfacce con proprietà readonly per stato più sicuro.
 export class Loans {
   public loanNumber: number;
   public customerId: number;

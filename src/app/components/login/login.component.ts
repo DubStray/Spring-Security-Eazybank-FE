@@ -1,3 +1,4 @@
+// Componente di login; valida le credenziali e popola la session storage al successo.
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 import { NgForm } from '@angular/forms';
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   validateUser(loginForm: NgForm) {
+    // Chiama il backend, marca l’auth, salva utente + token xsrf e reindirizza.
+    // Suggerimento: gestione errori e loading renderebbero il flusso più robusto.
     this.loginService
       .validateLoginDetails(this.model)
       .subscribe((responseData) => {

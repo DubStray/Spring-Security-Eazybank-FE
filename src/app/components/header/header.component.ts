@@ -1,3 +1,4 @@
+// Barra di navigazione; mostra link in base allo stato di autenticazione salvato in sessione.
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 
@@ -12,6 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Legge l’utente in cache per gestire il menu. Valuta uno stato auth osservabile.
     if (sessionStorage.getItem('userdetails')) {
       this.user = JSON.parse(sessionStorage.getItem('userdetails')!);
     }
