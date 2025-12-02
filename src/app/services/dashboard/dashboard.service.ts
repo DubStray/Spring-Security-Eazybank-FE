@@ -52,9 +52,11 @@ export class DashboardService {
 
   // Invia i messaggi di contatto; ritorna il record creato con id generato.
   saveMessage(contact: Contact) {
+    var contacts = [];
+    contacts.push(contact);
     return this.http.post(
       environment.rooturl + AppConstants.CONTACT_API_URL,
-      contact,
+      contacts,
       { observe: 'response', withCredentials: true }
     );
   }
