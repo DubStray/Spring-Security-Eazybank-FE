@@ -15,6 +15,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit(): void {
     // Pulisce le credenziali salvate; un auth service dedicato renderebbe la logica riusabile.
     window.sessionStorage.setItem('userdetails', '');
+    window.sessionStorage.setItem('Authorization', '');
     // window.sessionStorage.setItem('XSRF-TOKEN', '');
     this.router.navigate(['/login']);
   }

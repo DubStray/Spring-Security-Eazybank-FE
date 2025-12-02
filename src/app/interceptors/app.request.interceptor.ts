@@ -29,6 +29,12 @@ export class XhrInterceptor implements HttpInterceptor {
         'Authorization',
         'Basic ' + window.btoa(this.user.email + ':' + this.user.password)
       );
+    } else {
+      // Prende il token Authorization dalla session storage, se non è null manda l'Header authorization
+      let authorization = sessionStorage.getItem('Authorization');
+      if (authorization) {
+        httpHeaders = httpHeaders.append('Authorization', authorization);
+      }
     }
 
     // Propaga il token XSRF atteso da Spring Security.
