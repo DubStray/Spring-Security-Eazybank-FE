@@ -2,16 +2,12 @@
 <div data-navigation="container" class="i-top-header">
   <div class="wrapper top-section">
     <div class="hleft">
-      <a
-        class="logo selfLogo"
-        [routerLink]="user.authStatus != 'AUTH' ? ['/home'] : ['/dashboard']"
-        ><img alt="logo" src="../assets/images/logo.png"
-      /></a>
+      <a class="logo selfLogo" [routerLink]="user.authStatus != 'AUTH' ? ['/home'] : ['/dashboard']"><img alt="logo"
+          src="../assets/images/logo.png" /></a>
     </div>
     <div class="mnav_hb hide">
       <div class="hamburger">
-        <span class="line"></span><span class="line"></span
-        ><span class="line"></span>
+        <span class="line"></span><span class="line"></span><span class="line"></span>
       </div>
     </div>
     <nav class="hright dnav">
@@ -20,7 +16,7 @@
           <a routerLink="/home">Home</a>
         </li>
         <li *ngIf="user.authStatus != 'AUTH'" routerLinkActive="active">
-          <a routerLink="/login">Login</a>
+          <a (click)="login()">Login</a>
         </li>
         <li *ngIf="user.authStatus != 'AUTH'" routerLinkActive="active">
           <a routerLink="/contact">Contact US</a>
@@ -32,7 +28,7 @@
           <a routerLink="/dashboard">Dashboard</a>
         </li>
         <li *ngIf="user.authStatus == 'AUTH'" routerLinkActive="active">
-          <a routerLink="/logout">Logout</a>
+          <a (click)="logout()">Logout</a>
         </li>
       </ul>
     </nav>

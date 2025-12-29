@@ -14,14 +14,14 @@ export class CardsComponent implements OnInit {
   cards = new Array();
   currOutstandingAmt: number = 0;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
     // Carica i dati carte dell’utente e somma availableAmount in un totale.
     this.user = JSON.parse(sessionStorage.getItem('userdetails') || '');
     if (this.user) {
       this.dashboardService
-        .getCardsDetails(this.user.id)
+        .getCardsDetails(this.user.email)
         .subscribe((responseData) => {
           this.cards = <any>responseData.body;
           this.cards.forEach(

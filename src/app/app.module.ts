@@ -1,6 +1,6 @@
 // Modulo root di Angular: collega dipendenze, componenti e logiche trasversali.
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   HttpClientModule,
@@ -19,9 +19,24 @@ import { AccountComponent } from './components/account/account.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { LoansComponent } from './components/loans/loans.component';
 import { CardsComponent } from './components/cards/cards.component';
-import { XhrInterceptor } from './interceptors/app.request.interceptor';
-import { AuthActivateRouteGuard } from './routeguards/auth.routeguard';
+
 import { HomeComponent } from './components/home/home.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://127.0.0.1:8180/',
+        realm: 'eazybankdev',
+        clientId: 'eazypublicclient',
+      },
+      initOptions: {
+        pkceMethod: 'S256',
+        redirectUri: 'http://localhost:4200/dashboard',
+      }, loadUserProfileAtStartUp: false
+    });
+}
 
 @NgModule({
   // Dichiara tutti i componenti del modulo così Angular può renderizzarli.
@@ -49,16 +64,17 @@ import { HomeComponent } from './components/home/home.component';
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',
     }),
+    KeycloakAngularModule,
   ],
   // Registra l’interceptor HTTP e la route guard a livello di modulo.
   providers: [
     {
-      provide: HTTP_INTERCEPTORS,
-      useClass: XhrInterceptor,
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
       multi: true,
+      deps: [KeycloakService],
     },
-    AuthActivateRouteGuard,
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
