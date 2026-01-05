@@ -1,7 +1,10 @@
-// Elenco pubblico degli avvisi; carica i dati in init e renderizza card.
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 
+/**
+ * Componente per la visualizzazione degli avvisi (Notices).
+ * Carica e mostra le comunicazioni pubbliche della banca.
+ */
 @Component({
   selector: 'app-notices',
   templateUrl: './notices.component.html',
@@ -12,9 +15,12 @@ export class NoticesComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) {}
 
+  /**
+   * Carica la lista degli avvisi dal backend all'inizializzazione.
+   */
   ngOnInit(): void {
-    // Carica una volta in init; per aggiornamenti real-time usa uno stream osservabile.
     this.dashboardService.getNoticeDetails().subscribe((responseData) => {
+      // Popola l'array 'notices' con i dati ricevuti per mostrarli nel template.
       this.notices = <any>responseData.body;
     });
   }

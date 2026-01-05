@@ -1,8 +1,12 @@
-// Componente di logout: pulisce la session storage e reindirizza al login.
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user.model';
 
+/**
+ * Componente di Logout.
+ * Gestisce la disconnessione dell'utente, pulendo la sessione locale
+ * e reindirizzando alla pagina di login o home.
+ */
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
@@ -12,11 +16,15 @@ export class LogoutComponent implements OnInit {
   user = new User();
   constructor(private router: Router) {}
 
+  /**
+   * All'inizializzazione, pulisce le informazioni sensibili dal sessionStorage.
+   */
   ngOnInit(): void {
-    // Pulisce le credenziali salvate; un auth service dedicato renderebbe la logica riusabile.
     window.sessionStorage.setItem('userdetails', '');
     window.sessionStorage.setItem('Authorization', '');
-    // window.sessionStorage.setItem('XSRF-TOKEN', '');
+    // window.sessionStorage.setItem('XSRF-TOKEN', ''); // Opzionale: pulire anche XSRF token se necessario
+    
+    // Reindirizza l'utente alla pagina di login.
     this.router.navigate(['/login']);
   }
 }

@@ -1,4 +1,8 @@
-// Componente shell root; ospita il router e i provider globali.
+/**
+ * Componente principale (Root Component) dell'applicazione.
+ * Funge da contenitore (shell) per l'intera interfaccia utente.
+ * Contiene il tag <router-outlet> nel suo template per gestire la navigazione.
+ */
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +11,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  // Titolo descrittivo utile per debug/analytics.
+  // Titolo dell'applicazione, utilizzato principalmente per scopi di debug o visualizzazione nel template.
   title = 'bank-app-ui';
 }

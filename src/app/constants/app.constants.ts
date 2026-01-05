@@ -1,4 +1,8 @@
-// Frammenti di rotte API centralizzati; evita duplicare stringhe nei servizi.
+/**
+ * Costanti globali dell'applicazione.
+ * Contiene gli endpoint delle API REST del backend per evitare hardcoding nei servizi.
+ * Facilita la manutenzione centralizzando le URL.
+ */
 export const AppConstants = {
   CONTACT_API_URL: '/contact',
   LOGIN_API_URL: '/user',

@@ -1,11 +1,21 @@
-// DTO che descrive un prestito cliente; valuta interfacce con proprietà readonly per stato più sicuro.
+/**
+ * Modello che rappresenta un prestito bancario attivo.
+ * Contiene i dettagli sull'importo prestato e lo stato dei pagamenti.
+ */
 export class Loans {
+  /** Numero identificativo del prestito */
   public loanNumber: number;
+  /** ID del cliente intestatario del prestito */
   public customerId: number;
+  /** Data di inizio del prestito */
   public startDt: Date;
+  /** Tipo di prestito (es. Mutuo, Prestito personale, Auto) */
   public loanType: string;
+  /** Importo totale concesso in prestito */
   public totalLoan: number;
+  /** Importo già rimborsato */
   public amountPaid: number;
+  /** Importo residuo da pagare */
   public outstandingAmount: number;
 
   constructor(

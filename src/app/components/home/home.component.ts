@@ -1,6 +1,9 @@
-// Landing page pubblica; contiene solo contenuto statico.
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Componente Home (Landing Page pubblica).
+ * Visualizza il contenuto statico principale accessibile a tutti gli utenti (anche non autenticati).
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

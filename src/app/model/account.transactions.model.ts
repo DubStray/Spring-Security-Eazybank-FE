@@ -1,11 +1,21 @@
-// Modello di riga transazione per la cronologia movimenti.
+/**
+ * Modello che rappresenta una singola transazione bancaria.
+ * Utilizzato per popolare la cronologia dei movimenti nell'interfaccia utente.
+ */
 export class AccountTransactions {
+  /** Numero del conto associato alla transazione */
   public accountNumber: number;
+  /** ID del cliente */
   public customerId: number;
+  /** Data in cui la transazione è stata effettuata */
   public transactionDt: Date;
+  /** Descrizione o causale della transazione */
   public transactionSummary: string;
+  /** Tipo di transazione (es. Deposito, Prelievo) */
   public transactionType: string;
+  /** Importo della transazione */
   public transactionAmt: number;
+  /** Saldo finale dopo la transazione */
   public closingBalance: number;
 
   constructor(
